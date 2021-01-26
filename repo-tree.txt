@@ -1,0 +1,49 @@
+.
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── README.md
+├── app.py
+├── cdk.context.json
+├── cdk.json
+├── example-scripts
+│   ├── activate-gateway.sh
+│   ├── generate-test-data.sh
+│   └── vault-data-example.sh
+├── images
+│   ├── arch
+│   │   ├── data-vaulting-stack-arch.png
+│   │   ├── event-processing-stack-arch.png
+│   │   ├── notification-processing-cdk-app-arch-high-res.png
+│   │   ├── notification-processing-cdk-app-arch.png
+│   │   └── notification-processing-example-data-vaulting-timeline.png
+│   └── screenshots
+│       ├── cloudwatch-data-file-upload-event-log.png
+│       ├── cloudwatch-reconcile-notify-event-log.png
+│       ├── dynamodb-table.png
+│       ├── file-gateway-activate-terminal.png
+│       ├── file-gateway-aws-cli-delete.png
+│       ├── file-gateway-client-connect.png
+│       ├── file-gateway-client-generate-data.png
+│       ├── file-gateway-client-vault-data.png
+│       ├── file-gateway-configure-file-share-1.png
+│       ├── file-gateway-configure-file-share-2.png
+│       ├── file-gateway-edit-local-disks-1.png
+│       ├── file-gateway-edit-local-disks-2.png
+│       ├── file-gateway-share-mount.png
+│       ├── file-gateway-terminal.png
+│       ├── s3-cdk-app-scripts-bucket-empty.png
+│       ├── s3-uploaded-files.png
+│       └── step-functions-state-machine.png
+├── lambda-code
+│   ├── check-file-notification-type.py
+│   ├── file-upload-event-writer.py
+│   ├── reconcile-check.py
+│   ├── reconcile-iterator.py
+│   └── reconcile-notify.py
+├── repo-tree.txt
+├── requirements.txt
+└── storage_gateway_file_upload_notification_processing
+    ├── __init__.py
+    ├── storage_gateway_data_vaulting.py
+    └── storage_gateway_event_processing.py

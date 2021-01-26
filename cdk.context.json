@@ -1,0 +1,8 @@
+{
+  "reconcileCountIterations": "960",
+  "reconcileWaitIterations": "30",
+  "jobDirSuffixName": "-vaultjob",
+  "manifestSuffixName": ".manifest",
+  "stacksAccountId": "REPLACE WITH AWS ACCOUNT NUMBER",
+  "stacksRegion": "REPLACE WITH AWS REGION e.g. eu-west-1"
+}

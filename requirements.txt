@@ -1,0 +1,4 @@
+aws.cdk.aws_events_targets
+aws.cdk.aws_lambda_event_sources
+aws.cdk.aws_stepfunctions_tasks
+aws.cdk.aws_s3_deployment
