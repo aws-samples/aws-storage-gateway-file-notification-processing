@@ -6,7 +6,7 @@ Feedback: Contact atieka@amazon.co.uk, djsearle@amazon.co.uk.
 
 ---
 
-## Module 1 - Solution components and architecture
+# Module 1 - Solution components and architecture
 For data vaulted via a File Gateway, the CDK application components work with the following principles:
 * **Logical Datasets:** A group of files and directories stored in a uniquely named folder on a File Gateway file share. These files represent a single logical dataset to be vaulted to Amazon S3 and treated as a single entity for the purposes of downstream processing. The files are copied from a source location that mounts the File Gateway file share using NFS or SMB.
 * **Logical Dataset IDs:** A unique string that identifies a specific logical dataset. This is used as part of the name for the root directory containing a single logical dataset created on a File Gateway file share. The Dataset ID allows the event processing flow to distinguish between different vaulted datasets and reconcile within them accordingly.
@@ -29,15 +29,15 @@ An example logical dataset directory structure:
 [LOGICAL DATASET ID]-vaultjob/[LOGICAL DATASET ID].manifest (recursive list of all files and dirs)
 ```
 
-### 1.1 CDK application architecture
+## 1.1 CDK application architecture
 The following diagram illustrates the architecture for the processing flow implemented by this CDK application. It details the individual execution stages for each of the two file types uploaded ("data" and "manifest" files). For a higher resolution image, view [`notification-processing-cdk-app-arch-high-res.png`](images/arch/notification-processing-cdk-app-arch-high-res.png) within the `images/arch` folder of this repository:
 
 ![Event Processing Flow Logical Architecture](images/arch/notification-processing-cdk-app-arch.png)
 
-### 1.2 Example event processing flow execution timeline
+## 1.2 Example event processing flow execution timeline
 The diagram [`notification-processing-example-data-vaulting-timeline.png`](images/arch/notification-processing-example-data-vaulting-timeline.png) within the `images/arch` folder of this repository illustrates the timeline and execution steps implemented by this CDK application for the processing of File Gateway upload notifications (NOTE: this is a large, high resolution, image). It details an example scenario for a data vaulting operation and how each CDK resource created is executed, and in what order, during the event processing flow. NOTE: The "time" dimension in this diagram is not scaled or linear - it is meant as an indicative representation of the order in which resources are used in the example scenario illustrated.
 
-### 1.3 CDK application stacks
+## 1.3 CDK application stacks
 This CDK application contains two stacks (listed in the order deployed in this workshop):
 * **EventProcessingStack:**
 Deploys the event processing architecture illustrated in **section 1.1** above, intended to be used with a Storage Gateway (File Gateway) configured to generate file upload notifications. More information on deploying this stack is provided in [**Module 3.1**](MODULE3.md#31-event-processing-stack). NOTE: This stack does not create the File Gateway or File Gateway client. These are created as part of the `DataVaultingStack`.
