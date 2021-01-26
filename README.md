@@ -28,7 +28,7 @@ Many customers use AWS Storage Gateway (File Gateway) to upload individual files
 This workshop will cost approximately $3-4 in AWS service charges and require 1 hour to complete. Once you have finished, destroy the deployed CDK application stacks in order to prevent further charges (see **Module 7**).
 
 ## Workshop modules
-* Module 1 - Overview of the architecture and solution components
+* [Module 1](MODULE1.md) - Overview of the architecture and solution components
 * Module 2 - CDK pre-requisites and preparation
 * Module 3 - Deploy the CDK application stacks
 * Module 4 - Activate and configure the File Gateway
