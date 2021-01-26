@@ -89,7 +89,6 @@ function generateFileArray {
         fileName="file-"`head /dev/urandom | LC_CTYPE=C tr -dc A-Za-z0-9 | head -c 8 ; echo ''`
         fileArray+=(${dirArray[$randomDirNo]}"/"$fileName":"$fileSizeBytes)
     done
-    echo ${fileArray[@]} > out
     fileArrayLength=`expr "${#fileArray[@]}" - 1`
     timeLog "INFO: Done - ${#fileArray[@]} files to be created"
 }
