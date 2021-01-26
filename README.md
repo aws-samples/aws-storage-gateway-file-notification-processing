@@ -1,4 +1,4 @@
-# CDK application workshop to process AWS Storage Gateway (File Gateway) file upload notifications
+# AWS CDK application workshop to process AWS Storage Gateway (File Gateway) file upload notifications
 
 © 2021 Amazon Web Services, Inc. and its affiliates. All rights reserved. This sample code is made available under the MIT-0 license. See the LICENSE file.
 
