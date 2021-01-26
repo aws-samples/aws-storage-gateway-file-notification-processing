@@ -1,3 +1,11 @@
+# AWS CDK application workshop to process AWS Storage Gateway (File Gateway) file upload notifications
+
+© 2021 Amazon Web Services, Inc. and its affiliates. All rights reserved. This sample code is made available under the MIT-0 license. See the LICENSE file.
+
+Feedback: Contact atieka@amazon.co.uk, djsearle@amazon.co.uk.
+
+---
+
 ## Module 1 - Solution components and architecture
 For data vaulted via a File Gateway, the CDK application components work with the following principles:
 * **Logical Datasets:** A group of files and directories stored in a uniquely named folder on a File Gateway file share. These files represent a single logical dataset to be vaulted to Amazon S3 and treated as a single entity for the purposes of downstream processing. The files are copied from a source location that mounts the File Gateway file share using NFS or SMB.
@@ -32,9 +40,9 @@ The diagram [`notification-processing-example-data-vaulting-timeline.png`](image
 ### 1.3 CDK application stacks
 This CDK application contains two stacks (listed in the order deployed in this workshop):
 * **EventProcessingStack:**
-Deploys the event processing architecture illustrated in **section 1.1** above, intended to be used with a Storage Gateway (File Gateway) configured to generate file upload notifications. More information on deploying this stack is provided in **Module 3.1**. NOTE: This stack does not create the File Gateway or File Gateway client. These are created as part of the `DataVaultingStack`.
+Deploys the event processing architecture illustrated in **section 1.1** above, intended to be used with a Storage Gateway (File Gateway) configured to generate file upload notifications. More information on deploying this stack is provided in [**Module 3.1**](MODULE3.md#31-event-processing-stack). NOTE: This stack does not create the File Gateway or File Gateway client. These are created as part of the `DataVaultingStack`.
 
 * **DataVaultingStack:**
-Deploys a "minimal" VPC with two EC2 instances - a Storage Gateway (File Gateway) appliance and a File Gateway client. This stack is used to demonstrate an example data vaulting operation using a File Gateway appliance, triggering the event processing flow created by the `EventProcessingStack` above. The resources created by this stack are intended for temporary demonstration purposes and are used to illustrate a potential real-world use-case for the event processing flow. More information on deploying this stack is provided in **Module 3.2**.
+Deploys a "minimal" VPC with two EC2 instances - a Storage Gateway (File Gateway) appliance and a File Gateway client. This stack is used to demonstrate an example data vaulting operation using a File Gateway appliance, triggering the event processing flow created by the `EventProcessingStack` above. The resources created by this stack are intended for temporary demonstration purposes and are used to illustrate a potential real-world use-case for the event processing flow. More information on deploying this stack is provided in [**Module 3.2**](MODULE3.md#32-data-vaulting-stack).
 
-Move onto [Module 2](MODULE2.md) - CDK pre-requisites and preparation or return to the [main page](README.md).
+Move onto [Module 2 - CDK pre-requisites and preparation](MODULE2.md) or return to the [main page](README.md).
