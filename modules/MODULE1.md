@@ -30,12 +30,12 @@ An example logical dataset directory structure:
 ```
 
 ## 1.1 CDK application architecture
-The following diagram illustrates the architecture for the processing flow implemented by this CDK application. It details the individual execution stages for each of the two file types uploaded ("data" and "manifest" files). For a higher resolution image, view [`notification-processing-cdk-app-arch-high-res.png`](images/arch/notification-processing-cdk-app-arch-high-res.png) within the `images/arch` folder of this repository:
+The following diagram illustrates the architecture for the processing flow implemented by this CDK application. It details the individual execution stages for each of the two file types uploaded ("data" and "manifest" files). For a higher resolution image, view [`notification-processing-cdk-app-arch-high-res.png`](/images/arch/notification-processing-cdk-app-arch-high-res.png) within the `images/arch` folder of this repository:
 
-![Event Processing Flow Logical Architecture](images/arch/notification-processing-cdk-app-arch.png)
+![Event Processing Flow Logical Architecture](/images/arch/notification-processing-cdk-app-arch.png)
 
 ## 1.2 Example event processing flow execution timeline
-The diagram [`notification-processing-example-data-vaulting-timeline.png`](images/arch/notification-processing-example-data-vaulting-timeline.png) within the `images/arch` folder of this repository illustrates the timeline and execution steps implemented by this CDK application for the processing of File Gateway upload notifications (NOTE: this is a large, high resolution, image). It details an example scenario for a data vaulting operation and how each CDK resource created is executed, and in what order, during the event processing flow. NOTE: The "time" dimension in this diagram is not scaled or linear - it is meant as an indicative representation of the order in which resources are used in the example scenario illustrated.
+The diagram [`notification-processing-example-data-vaulting-timeline.png`](/images/arch/notification-processing-example-data-vaulting-timeline.png) within the `images/arch` folder of this repository illustrates the timeline and execution steps implemented by this CDK application for the processing of File Gateway upload notifications (NOTE: this is a large, high resolution, image). It details an example scenario for a data vaulting operation and how each CDK resource created is executed, and in what order, during the event processing flow. NOTE: The "time" dimension in this diagram is not scaled or linear - it is meant as an indicative representation of the order in which resources are used in the example scenario illustrated.
 
 ## 1.3 CDK application stacks
 This CDK application contains two stacks (listed in the order deployed in this workshop):
@@ -43,6 +43,6 @@ This CDK application contains two stacks (listed in the order deployed in this w
 Deploys the event processing architecture illustrated in **section 1.1** above, intended to be used with a Storage Gateway (File Gateway) configured to generate file upload notifications. More information on deploying this stack is provided in [**Module 3.1**](/modules/MODULE3.md#31-event-processing-stack). NOTE: This stack does not create the File Gateway or File Gateway client. These are created as part of the `DataVaultingStack`.
 
 * **DataVaultingStack:**
-Deploys a "minimal" VPC with two EC2 instances - a Storage Gateway (File Gateway) appliance and a File Gateway client. This stack is used to demonstrate an example data vaulting operation using a File Gateway appliance, triggering the event processing flow created by the `EventProcessingStack` above. The resources created by this stack are intended for temporary demonstration purposes and are used to illustrate a potential real-world use-case for the event processing flow. More information on deploying this stack is provided in [**Module 3.2**](MODULE3.md#32-data-vaulting-stack).
+Deploys a "minimal" VPC with two EC2 instances - a Storage Gateway (File Gateway) appliance and a File Gateway client. This stack is used to demonstrate an example data vaulting operation using a File Gateway appliance, triggering the event processing flow created by the `EventProcessingStack` above. The resources created by this stack are intended for temporary demonstration purposes and are used to illustrate a potential real-world use-case for the event processing flow. More information on deploying this stack is provided in [**Module 3.2**](/modules/MODULE3.md#32-data-vaulting-stack).
 
-Move onto [Module 2 - CDK pre-requisites and preparation](MODULE2.md) or return to the [main page](README.md).
+Move onto [Module 2 - CDK pre-requisites and preparation](/modules/MODULE2.md) or return to the [main page](README.md).
