@@ -25,15 +25,15 @@ Many customers use AWS Storage Gateway (File Gateway) to upload individual files
 * Internet browser (Chrome or Firefox recommended)
 
 # Costs
-This workshop will cost approximately $3-4 in AWS service charges and require 1 hour to complete. Once you have finished, destroy the deployed CDK application stacks in order to prevent further charges (see [**Module 7**](MODULE7.md)).
+This workshop will cost approximately $3-4 in AWS service charges and require 1 hour to complete. Once you have finished, destroy the deployed CDK application stacks in order to prevent further charges (see [**Module 7**](modules/MODULE7.md)).
 
 # Workshop modules
-* [Module 1](MODULE1.md) - Overview of the architecture and solution components
-* [Module 2](MODULE2.md) - CDK pre-requisites and preparation
-* [Module 3](MODULE3.md) - Deploy the CDK application stacks
-* [Module 4](MODULE4.md) - Activate and configure the File Gateway
-* [Module 5](MODULE5.md) - Execute an example data vaulting operation
-* [Module 6](MODULE6.md) - Observe the event processing flow
-* [Module 7](MODULE7.md) - Cleanup
+* [Module 1](modules/MODULE1.md) - Overview of the architecture and solution components
+* [Module 2](modules/MODULE2.md) - CDK pre-requisites and preparation
+* [Module 3](modules/MODULE3.md) - Deploy the CDK application stacks
+* [Module 4](modules/MODULE4.md) - Activate and configure the File Gateway
+* [Module 5](modules/MODULE5.md) - Execute an example data vaulting operation
+* [Module 6](modules/MODULE6.md) - Observe the event processing flow
+* [Module 7](modules/MODULE7.md) - Cleanup
 
-Go to [Module 1](MODULE1.md) to get started now.
+Go to [Module 1](modules/MODULE1.md) to get started now.
