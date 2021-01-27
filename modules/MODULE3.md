@@ -10,16 +10,16 @@ Feedback: Contact atieka@amazon.co.uk, djsearle@amazon.co.uk.
 ## 3.1 Event processing stack
 First, we''ll deploy the `EventProcessingStack`. This will create all the resources and configuration for the event processing flow, as illustrated in the following architecture diagram:
 
-![EventProcessingStack Architecture](images/arch/event-processing-stack-arch.png)
+![EventProcessingStack Architecture](/images/arch/event-processing-stack-arch.png)
 
 The AWS Step Functions state machine implements the file upload event reconciliation logic. It executes a combination of Pass, Choice and Task states. Below is a summary of the steps executed:
 
-* **Configure Count**: Configures the maximum total number of iterations the state machine will execute. The count value is obtained from the `reconcileCountIterations` CDK context key, as described in [**Module 1**](MODULE1.md).
+* **Configure Count**: Configures the maximum total number of iterations the state machine will execute. The count value is obtained from the `reconcileCountIterations` CDK context key, as described in [**Module 1**](/modules/MODULE1.md).
 * **Reconcile Iterator**: Executes an AWS Lambda function that increases the value of the current iteration count by one. If the current value equals the maximum count value configured, the Lambda function will set the Boolean variable `continue` to False, preventing the state machine from entering another iteration loop.
 * **Check Count Reached**: Checks to confirm if the Boolean variable `continue` is True or False. Proceeds to “Reconcile Check Upload” if True or “Reconcile Notify” if False.
 * **Reconcile Check Upload**: Executes an AWS Lambda function that reads the “manifest” file from the Amazon S3 bucket and compares the contents with the file upload events written to the Amazon DynamoDB table. If these are identical, another Boolean variable `reconcileDone` is set to True, indicating the reconcile process has completed. This variable is set to False if these data sources do not match.
 * **Reconcile Check Complete**: Checks to confirm if the Boolean variable `reconcileDone` is True or False. Proceeds to “Reconcile Notify” if True or “Wait” if False.
-* **Wait**: A simple wait state that sleeps for a configured time. This sleep time is obtained from a CDK context key, as described in [**Module 1**](MODULE1.md). This state is entered upon whenever Boolean variables, `continue` and `reconcileDone` are set to True and False respectively.
+* **Wait**: A simple wait state that sleeps for a configured time. This sleep time is obtained from a CDK context key, as described in [**Module 1**](/modules/MODULE1.md). This state is entered upon whenever Boolean variables, `continue` and `reconcileDone` are set to True and False respectively.
 * **Reconcile Notify**: Executes an AWS Lambda function that sends an event to the EventBridge custom bus, notifying on the status of the reconciliation process. This is either “Successful” if completed within the maximum number of configured iterations or “Timed out” if not. Proceeds to the final “Done” state, completing the state machine execution.
 
 
@@ -35,7 +35,7 @@ The Storage Gateway (File Gateway) and File Gateway client will be created as pa
 
 The following diagram illustrates the data vaulting stack architecture:
 
-![data vaulting vpc](images/arch/data-vaulting-stack-arch.png)
+![data vaulting vpc](/images/arch/data-vaulting-stack-arch.png)
 
 Execute the following on the CDK client, this stack will take approximately 6-8 minutes to deploy:
 ```console
@@ -58,4 +58,4 @@ The stack creates the following:
 
 We're now ready to activate and configure the Storage Gateway (File Gateway).
 
-Move onto [Module 4 - Activate and configure the File Gateway](MODULE4.md) or return to the [main page](README.md).
+Move onto [Module 4 - Activate and configure the File Gateway](/modules/MODULE4.md) or return to the [main page](/README.md).

@@ -29,7 +29,7 @@ user@cdk-client>% .venv\Scripts\activate.bat (Windows)
 user@cdk-client>$ pip install -r requirements.txt
 ```
 
-You can list the CDK context key values by executing the following command. The keys specific to this application are explained at the beginning of [**Module 1**](MODULE1.md):
+You can list the CDK context key values by executing the following command. The keys specific to this application are explained at the beginning of [**Module 1**](/modules/MODULE1.md):
 ```console
 user@cdk-client>$ cdk context
 ┌────┬─────────────────────────────────────────────┬────────────────┐
@@ -86,4 +86,4 @@ user@cdk-client>$
 
 We're now ready to deploy the stacks.
 
-Move onto [Module 3 - Deploy the CDK application stacks](MODULE3.md) or return to the [main page](README.md).
+Move onto [Module 3 - Deploy the CDK application stacks](/modules/MODULE3.md) or return to the [main page](/README.md).

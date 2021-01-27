@@ -21,23 +21,23 @@ Below are some AWS console screenshots illustrating the information logged/writt
 
 * **Amazon S3 Bucket:** [Amazon S3 console link](https://console.aws.amazon.com/s3). Files and directories written to `/mnt/vaultdata` uploaded to Amazon S3 by the File Gateway for this example data vaulting operation. The relevant Amazon S3 bucket name will begin with `eventprocessingstack-fileuploadbucket`:
 
-    ![Amazon S3 file upload bucket](images/screenshots/s3-uploaded-files.png)
+    ![Amazon S3 file upload bucket](/images/screenshots/s3-uploaded-files.png)
 
-* **CloudWatch Logs "data" file Log group:** [CloudWatch Logs console link](https://console.aws.amazon.com/cloudwatch). File upload notification events for "data" files. You'll notice the logical dataset ID `set-id` is ascertained from the name of the logical dataset directory created by the data vaulting script in [**Module 5.3**](MODULE5.md#53-vault-the-sample-data). It follows the scheme described in [**Module 1**](MODULE1.md). The relevant CloudWatch Logs log group name will begin with `EventProcessingStack-dataFileUpload`:
+* **CloudWatch Logs "data" file Log group:** [CloudWatch Logs console link](https://console.aws.amazon.com/cloudwatch). File upload notification events for "data" files. You'll notice the logical dataset ID `set-id` is ascertained from the name of the logical dataset directory created by the data vaulting script in [**Module 5.3**](/modules/MODULE5.md#53-vault-the-sample-data). It follows the scheme described in [**Module 1**](/modules/MODULE1.md). The relevant CloudWatch Logs log group name will begin with `EventProcessingStack-dataFileUpload`:
 
-    ![Amazon CloudWatch data file upload event Log](images/screenshots/cloudwatch-data-file-upload-event-log.png)
+    ![Amazon CloudWatch data file upload event Log](/images/screenshots/cloudwatch-data-file-upload-event-log.png)
 
 * **DynamoDB Table:** [DynamoDB console link](https://console.aws.amazon.com/dynamodb). Relevant metadata from the file upload notifications are written to this table, an item will exist for every upload notification. The relevant DynamoDB table name will begin with `EventProcessingStack-fileUploadEventTable`:
 
-    ![Amazon DynamoDB table](images/screenshots/dynamodb-table.png)
+    ![Amazon DynamoDB table](/images/screenshots/dynamodb-table.png)
 
-* **Step Functions state machine:** [Step Functions console link](https://console.aws.amazon.com/states). A successfully executed file upload reconciliation state machine - NOTE: The state `waitBetweenIterationsState` may be coloured white (instead of green). This simply means the state machine did not need to iterate (and wait) in order to reconcile upload events with the contents of the "manifest" file - i.e. after uploading the "manifest" file, the File Gateway completed all remaining "data" file uploads within the waiting time period set by the `reconcileWaitIterations` CDK context key contained in the `cdk.context.json` file (for a reminder on this CDK context key see [**Module 1**](MODULE1.md)). The relevant state machine name will begin with `reconcileStateMachine`:
+* **Step Functions state machine:** [Step Functions console link](https://console.aws.amazon.com/states). A successfully executed file upload reconciliation state machine - NOTE: The state `waitBetweenIterationsState` may be coloured white (instead of green). This simply means the state machine did not need to iterate (and wait) in order to reconcile upload events with the contents of the "manifest" file - i.e. after uploading the "manifest" file, the File Gateway completed all remaining "data" file uploads within the waiting time period set by the `reconcileWaitIterations` CDK context key contained in the `cdk.context.json` file (for a reminder on this CDK context key see [**Module 1**](/modules/MODULE1.md)). The relevant state machine name will begin with `reconcileStateMachine`:
 
-    ![AWS Step Functions reconciliation state machine](images/screenshots/step-functions-state-machine.png)
+    ![AWS Step Functions reconciliation state machine](/images/screenshots/step-functions-state-machine.png)
 
 * **CloudWatch Logs "reconcile notification" Log group:** [CloudWatch Logs console link](https://console.aws.amazon.com/cloudwatch). A successful file upload reconciliation event is emitted by the Step Functions state machine - this is the final stage in the event processing flow for a particular logical dataset. The relevant CloudWatch Logs log group name will begin with `EventProcessingStack-reconcileNotifySuccessful`:
 
-    ![Amazon CloudWatch reconcile notify event log](images/screenshots/cloudwatch-reconcile-notify-event-log.png)
+    ![Amazon CloudWatch reconcile notify event log](/images/screenshots/cloudwatch-reconcile-notify-event-log.png)
 
 The structure of the "reconcile notification" event, which contains metadata regarding the logical dataset ID and manifest file, is as follows:
 
@@ -67,4 +67,4 @@ The File Gateway implements a write-back cache and asynchronously uploads data t
 
 Since File Upload notifications are **only** generated by the File Gateway when files have been **completely** uploaded to Amazon S3, it is in these scenarios that the File upload notification feature becomes a powerful mechanism to co-ordinate downstream processing. This example data vaulting operation is a good demonstration of real-world scenarios where a File Gateway is often managing hundreds of GBs of uploads to Amazon S3 for hundreds/thousands of files copied by multiple clients.
 
-Move onto [Module 7 - Cleanup](MODULE7.md) or return to the [main page](README.md).
+Move onto [Module 7 - Cleanup](/modules/MODULE7.md) or return to the [main page](/README.md).
