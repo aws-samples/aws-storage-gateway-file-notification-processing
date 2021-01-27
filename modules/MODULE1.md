@@ -45,4 +45,4 @@ Deploys the event processing architecture illustrated in **section 1.1** above, 
 * **DataVaultingStack:**
 Deploys a "minimal" VPC with two EC2 instances - a Storage Gateway (File Gateway) appliance and a File Gateway client. This stack is used to demonstrate an example data vaulting operation using a File Gateway appliance, triggering the event processing flow created by the `EventProcessingStack` above. The resources created by this stack are intended for temporary demonstration purposes and are used to illustrate a potential real-world use-case for the event processing flow. More information on deploying this stack is provided in [**Module 3.2**](/modules/MODULE3.md#32-data-vaulting-stack).
 
-Move onto [Module 2 - CDK pre-requisites and preparation](/modules/MODULE2.md) or return to the [main page](README.md).
+Move onto [Module 2 - CDK pre-requisites and preparation](/modules/MODULE2.md) or return to the [main page](/README.md).
